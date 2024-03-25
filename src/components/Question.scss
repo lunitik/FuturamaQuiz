@@ -1,0 +1,16 @@
+.possible-answers {
+    display: flex;
+    justify-content: space-between;    
+}
+
+.btn {
+    &.CORRECT {
+        background: #2ecc71;
+        color: #fff;
+    }
+
+    &.WRONG {
+        background: #e74c3c;
+        color: #fff;
+    }
+}
