@@ -16,4 +16,5 @@ export interface IGameContext {
   handleNextQuestion: () => void;
   answerHasBeenSelected: boolean;
   setAnswerHasBeenSelected: Dispatch<SetStateAction<boolean>>;
+  resetGame: () => void;
 }

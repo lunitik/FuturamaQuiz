@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.futurama {
+  font-size: 100px;
+    -webkit-text-stroke-width: 3.1px;
+    -webkit-text-stroke-color: #ffd500;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+            background-clip: text;
+    background-image:-webkit-linear-gradient(90deg, #FF0000 5%, #450404 100%);
+    margin: 0;
+}
+
+.subtitle {
+  margin: 0;
+}

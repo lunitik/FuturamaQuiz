@@ -1,7 +1,4 @@
-import {
-  useEffect,
-  useState,
-} from "react";
+import { useEffect, useState } from "react";
 import { TQuestion } from "../components/Question/TQuestion";
 import { TPossibleAnswersMap } from "../components/Question/TPossibleAnswersMap";
 import useQuestions from "../services/useQuestions";
@@ -29,17 +26,25 @@ const GameContextProvider = ({ children }: TGameContextProviderProps) => {
     NUMBER_OF_QUESTIONS_IN_QUIZ
   );
 
+  const resetGame = () => {
+    if (!questions) return;
+
+    setCurrentQuestionIndex(0);
+    setCurrentQuestion(questions[currentQuestionIndex]);
+    setAnswerHasBeenSelected(false);
+    setIsGameOver(false);
+  };
+
   const handleNextQuestion = () => {
     if (questions && currentQuestionIndex < questions?.length - 1) {
       const nextQuestionIndex = currentQuestionIndex + 1;
       setCurrentQuestionIndex(nextQuestionIndex);
       setCurrentQuestion(questions[nextQuestionIndex]);
       setAnswerHasBeenSelected(false);
-    }
-    else {
+    } else {
       setIsGameOver(true);
     }
-  }
+  };
 
   useEffect(() => {
     if (!questions) return;
@@ -69,8 +74,8 @@ const GameContextProvider = ({ children }: TGameContextProviderProps) => {
     isGameOver,
     handleNextQuestion,
     answerHasBeenSelected,
-    setAnswerHasBeenSelected
-    
+    setAnswerHasBeenSelected,
+    resetGame
   };
 
   return (

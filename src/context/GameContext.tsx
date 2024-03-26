@@ -15,4 +15,5 @@ export const GameContext = createContext<IGameContext>({
   handleNextQuestion: () => {},
   answerHasBeenSelected: false,
   setAnswerHasBeenSelected: () => {},
+  resetGame: () => {},
 });
