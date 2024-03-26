@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  position: relative;
 }
 
 h1 {
@@ -65,4 +66,16 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/*
+   This is a licensed font. DO NOT USE!
+*/
+@font-face {
+  font-family: 'futurama';
+  src: url('./assets/fonts/fr-bold.ttf');
+}
+
+* {
+  font-family: futurama;
 }

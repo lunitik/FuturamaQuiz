@@ -1,0 +1,10 @@
+.game-controls {
+    &__container {
+        margin: 2rem;
+        display: flex;
+        justify-content: flex-end;
+        border-radius: 0.25rem;
+        background-color: #ccc;
+        padding: 1rem;;
+    }
+}

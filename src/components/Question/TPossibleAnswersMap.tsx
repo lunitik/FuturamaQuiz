@@ -1,4 +1,4 @@
-import { AnswerResult } from "./AnswerResult";
+import { AnswerResult } from "../../enums/AnswerResult";
 
 export type TPossibleAnswersMap = {
     [possibleAnswer: string]: AnswerResult,

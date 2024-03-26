@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TQuestion } from "../components/TQuestion";
+import { TQuestion } from "../components/Question/TQuestion";
 
 const QUESTIONS_BASE_URL = "https://api.sampleapis.com/futurama/questions";
 const randomise = () => Math.random() - 0.5;
@@ -10,6 +10,8 @@ const useQuestions = (NUMBER_OF_QUESTIONS_IN_QUIZ: number) => {
   const [questions, setQuestions] = useState<TQuestion[] | null>(null);
 
   useEffect(() => {
+    if(questions) return;
+    
     const getQuestions = async () => {
       setIsPending(true);
       try {
@@ -31,9 +33,9 @@ const useQuestions = (NUMBER_OF_QUESTIONS_IN_QUIZ: number) => {
       }
     };
     getQuestions();
-  }, [NUMBER_OF_QUESTIONS_IN_QUIZ]);
+  }, [NUMBER_OF_QUESTIONS_IN_QUIZ, questions]);
 
-  return { error, questions, isPending };
+  return { error, questions, isPending, setQuestions };
 };
 
 export default useQuestions;
